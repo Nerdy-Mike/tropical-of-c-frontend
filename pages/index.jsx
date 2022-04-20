@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+// import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { setCookies, getCookie } from 'cookies-next';
@@ -10,7 +10,7 @@ import { getProducts } from '@/src/store/actions/productActions';
 import { getCart, addToCart } from '@/src/store/actions/cartActions';
 
 
-const Home: NextPage = () => {
+const Home = () => {
   // // Set cookies
   // const currentUserId = getCookie('gemUserId');
   // if(!currentUserId){
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   const dispatch = useAppDispatch();
   const products = productData?.data;
 
-  const handleAddCart = async (product:any) => {
+  const handleAddCart = async (product) => {
     const optimizedProduct = {product: {name: product.product.name, price: product.product.price, id: product.product._id}}
     await dispatch(addToCart(optimizedProduct));
     await dispatch(getCart());
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
           ))}
         </div> */}
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-        {products?.map((product: any, key:number) => (
+        {products?.map((product, key) => (
             <button
             onClick={() => handleAddCart({product})}
             key={key}
