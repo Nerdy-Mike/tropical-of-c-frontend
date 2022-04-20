@@ -30,7 +30,7 @@ import {
   
   export const makeStore = () =>
     configureStore({
-      reducer,
+      reducer:combinedReducer,
     });
   
   type Store = ReturnType<typeof makeStore>;

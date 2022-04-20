@@ -8,7 +8,7 @@ import { getProduct } from '@/src/store/actions/productActions';
 import { RadioGroup } from '@headlessui/react'
 
 
-function classNames(...classes :any) {
+function classNames(...classes ) {
     return classes.filter(Boolean).join(' ')
   }
 
@@ -72,7 +72,7 @@ export default function ProductPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 relative">
           {/* Image gallery */}
           <div className="col-span-1 sm:col-span-2 grid sm:grid-cols-2 lg:gap-2">
-            {product.image.map((image:any, index:number) => (
+            {product.image.map((image, index) => (
               <div key={index} className="">
                 <img
                   src={image}

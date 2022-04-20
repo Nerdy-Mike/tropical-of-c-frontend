@@ -43,7 +43,7 @@ export default function Checkout() {
                 </div>
                 <div className='py-4 my-4 max-h-96 overflow-y-scroll px-2 border'>
                     <ul role="list" className="-my-6 divide-y divide-gray-200 m-2">
-                        {cart?.map((product:Object, index: Number) => (
+                        {cart?.map((product, index) => (
                             <li key={index} className="flex py-6 ">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden -md border border-gray-200">
                                 <img
