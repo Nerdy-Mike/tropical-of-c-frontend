@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
 import { wrapper } from '@/src/store/index';
 import Wrapper from '@/src/components/Wrapper';
 
@@ -7,7 +6,7 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
 
   return (
       <>
