@@ -16,7 +16,7 @@ import {
     singleProduct: singleProductReducer,
   });
   
-  const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) => {
+  const reducer = (state: undefined|ReturnType<typeof combinedReducer>, action: AnyAction) => {
     if (action.type === HYDRATE) {
       const nextState = {
         ...state, // use previous state
@@ -28,9 +28,10 @@ import {
     }
   };
   
+
   export const makeStore = () =>
     configureStore({
-      reducer:combinedReducer,
+      reducer,
     });
   
   type Store = ReturnType<typeof makeStore>;

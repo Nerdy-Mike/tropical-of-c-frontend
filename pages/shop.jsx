@@ -65,9 +65,6 @@ import { getCart, addToCart } from '@/src/store/actions/cartActions';
 //     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 // }
 
-function classNames(...classes ) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Shop() {
   // const [selectedColor, setSelectedColor] = useState(product.colors[0])
@@ -75,6 +72,7 @@ export default function Shop() {
   const { productData, productPending, productError } = useAppSelector((state) => state.products);
   
   const products = productData.data;
+  console.log(products);
   return (
     <div className="bg-white max-w-screen min-h-screen over-flow-x-hidden px-4 sm:px-12 pt-28">
       <div className=" grid grid-cols-1 sm:grid-cols-3 relative space-x-4">
@@ -112,7 +110,7 @@ export default function Shop() {
         {/* Mobile Responsive */}
       <div className=" sm:hidden sticky bottom-0 bg-white">
         <div className='text-center'>
-          {products.name}
+          {products?.name}
         </div> 
         <div className='flex flex-row px-1 space-x-1'>
           <button

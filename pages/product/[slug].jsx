@@ -26,13 +26,13 @@ function classNames(...classes ) {
   }
 
 export default function ProductPage() {
-    const router = useRouter()
-    const { slug } = router.query
+    // const router = useRouter()
+    // const { slug } = router.query
     const dispatch = useAppDispatch()
     const { singleProductData, singleProductPending, singleProductError } = useAppSelector((state) => state.singleProduct);
-    const { cartData, cartPending, cartError } = useAppSelector((state) => state.cart);
-
+    console.log(singleProductData)
     const product = singleProductData[0]
+    
     const [selectedColor, setSelectedColor] = useState(productOptions.colors[0])
     const [selectedSize, setSelectedSize] = useState(productOptions.sizes[2])
 
