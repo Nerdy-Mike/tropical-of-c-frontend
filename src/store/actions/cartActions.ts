@@ -2,9 +2,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'http://localhost:5000'
+// const url = 'http://localhost:5000'
 
-// const url = 'https://sheltered-plateau-19390.herokuapp.com'
+const url = 'https://sheltered-plateau-19390.herokuapp.com'
 
 export const getCart = createAsyncThunk('cart/getCart', async () => {
   const response = await axios.get(url);
