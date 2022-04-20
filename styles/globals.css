@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #C1C1C1 !important;
+    fill: black !important;
+    stroke: black !important;
+}
+.swiper-button-next,
+.swiper-button-prev:hover {
+    color: #000 important;
+}
