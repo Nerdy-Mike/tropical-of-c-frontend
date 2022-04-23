@@ -26,7 +26,6 @@ Home.getInitialProps = wrapper.getInitialPageProps(
   ({ dispatch }) =>
   
     async () => {      
-      await dispatch(getProducts());
       await dispatch(getCart());
     }
 )

@@ -6,8 +6,6 @@ import { useAppDispatch, useAppSelector } from '@/src/store/hooks';
 
 const Wrapper = ({children}) => {
 
-
-
   return (
     <div className=''>
       <Header />

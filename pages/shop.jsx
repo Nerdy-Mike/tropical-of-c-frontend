@@ -9,6 +9,7 @@ import { wrapper } from '@/src/store';
 import { getProducts } from '@/src/store/actions/productActions';
 import { getCart, addToCart } from '@/src/store/actions/cartActions';
 
+import Cookies from 'js-cookie';
 // const product = {
 //   name: 'Basic Tee 6-Pack',
 //   price: '$192',
@@ -72,7 +73,8 @@ export default function Shop() {
   const { productData, productPending, productError } = useAppSelector((state) => state.products);
   
   const products = productData.data;
-  console.log(products);
+  const userId = Cookies.get('userId')
+
   return (
     <div className="bg-white max-w-screen min-h-screen over-flow-x-hidden px-4 sm:px-12 pt-28">
       <div className=" grid grid-cols-1 sm:grid-cols-3 relative space-x-4">

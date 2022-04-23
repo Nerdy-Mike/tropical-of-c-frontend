@@ -49,7 +49,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 1
                     </div>                    
@@ -64,7 +64,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 2
                     </div>                    
@@ -79,7 +79,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 3
                     </div>                    
@@ -94,7 +94,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 4
                     </div>                    
@@ -109,7 +109,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 1
                     </div>                    
@@ -124,7 +124,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 5
                     </div>                    

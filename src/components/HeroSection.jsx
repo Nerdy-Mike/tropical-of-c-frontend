@@ -15,6 +15,7 @@ export default function HeroSection() {
       <div className="relative flex flex-col md:grid md:grid-cols-4 min-h-screen ">
         <div className=' md:col-span-3'>
             <img
+                
                 className=" object-cover w-full min-h-screen"
                 src="https://images.unsplash.com/photo-1500087935944-bd3bbbc5df9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
                 alt=""

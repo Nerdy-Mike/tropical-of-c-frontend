@@ -12,11 +12,9 @@ export default function Cart({open, setOpen}) {
   const dispatch = useAppDispatch();
 
   const cart = cartData?.data?.items;
-
   const handleRemoveFromCart = async (productId) => {
     try{
-        await dispatch(removeFromCart({productId}))
-        .then(() => dispatch(getCart()))
+        await dispatch(removeFromCart({productId})).then(res => dispatch(getCartFromResponse({data: res.payload})))
     } catch(err) {
         console.log(err)
     }

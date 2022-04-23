@@ -6,7 +6,7 @@ import { getProducts } from '@/src/store/actions/productActions';
 import { getCart, addToCart, removeFromCart, getCartFromResponse } from '@/src/store/actions/cartActions';
 import { getProduct } from '@/src/store/actions/productActions';
 import { RadioGroup } from '@headlessui/react'
-
+import { setCookies, getCookie, checkCookies } from 'cookies-next';
 
 function classNames(...classes ) {
     return classes.filter(Boolean).join(' ')
@@ -30,14 +30,12 @@ export default function ProductPage() {
     const { slug } = router.query
     const dispatch = useAppDispatch()
     const { singleProductData, singleProductPending, singleProductError } = useAppSelector((state) => state.singleProduct);
-    console.log(singleProductData)
     const product = singleProductData?.data[0] 
 
     const [selectedColor, setSelectedColor] = useState(productOptions.colors[0])
     const [selectedSize, setSelectedSize] = useState(productOptions.sizes[2])
 
     const [ addToCartLoading, setAddToCartLoading ] = useState(false)
-    
     const handleAddToCart = async (e) => {
         e.preventDefault()
       try{
@@ -48,25 +46,12 @@ export default function ProductPage() {
             image: product.image[0],
             price: product.price,
             quantity: 1,
-          })).then(() => dispatch(getCart()))
+          })).then(res => dispatch(getCartFromResponse({data: res.payload})))
           setTimeout(()=> setAddToCartLoading(false), 500)
       } catch(err) {
           console.log(err)
       }
     }
-
-
-
-
-
-    // console.log({
-    //   productId: product._id,
-    //   name: product.name,
-    //   image: product.image[0],
-    //   price: product.price,
-    //   quantity: 1,
-    // })
-    // console.log(product)
     return (
         <div className="bg-white max-w-screen min-h-screen over-flow-x-hidden">
         <div className="grid grid-cols-1 sm:grid-cols-3 relative">
@@ -219,94 +204,18 @@ export default function ProductPage() {
 ProductPage.getInitialProps = wrapper.getInitialPageProps(
     ({ dispatch }) =>
       async ({ query }) => {
-        await dispatch(getProduct({customPermalink: query.slug})).then(res => console.log(res))
+        await dispatch(getProduct({customPermalink: query.slug}))
         await dispatch(getCart())
+
+        // let userId = getCookie('userId')
+        // if(userId == null){
+        //   await dispatch(getCart(userId))
+        // }else{
+        //   setCookies('userId', Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
+        //   let userId = getCookie('userId')
+        //   await dispatch(getCart({userId: userId}))
+        // }
       }
   )
   
 
-
-// import { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
-// import { useAppDispatch, useAppSelector } from '@/src/store/hooks';
-// import { wrapper } from '@/src/store';
-// import { getProducts } from '@/src/store/actions/productActions';
-// import { getCart, addToCart, removeFromCart, getCartFromResponse } from '@/src/store/actions/cartActions';
-// import { getProduct } from '@/src/store/actions/productActions';
-// import { RadioGroup } from '@headlessui/react'
-
-
-// function classNames(...classes :any) {
-//     return classes.filter(Boolean).join(' ')
-//   }
-
-//   const productOptions = {
-//     colors: [
-//       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-//       { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-//       { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-//     ],
-//     sizes: [
-//       { name: 'S', inStock: false },
-//       { name: 'M', inStock: true },
-//       { name: 'L', inStock: true },
-//     ]
-//   }
-
-// export default function ProductPage() {
-//     const router = useRouter()
-//     const { slug } = router.query
-//     const dispatch = useAppDispatch()
-//     const { singleProductData, singleProductPending, singleProductError } = useAppSelector((state) => state.singleProduct);
-//     console.log(singleProductData.data[0])
-//     const product:any = singleProductData[0]
-
-//     const [selectedColor, setSelectedColor] = useState(productOptions.colors[0])
-//     const [selectedSize, setSelectedSize] = useState(productOptions.sizes[2])
-
-//     const [ addToCartLoading, setAddToCartLoading ] = useState(false)
-    
-//     const handleAddToCart = async (e:any) => {
-//         e.preventDefault()
-//       try{
-//           setAddToCartLoading(true)
-//           await dispatch(addToCart({
-//             productId: product._id,
-//             name: product.name,
-//             image: product.image[0],
-//             price: product.price,
-//             quantity: 1,
-//           })).then(() => dispatch(getCart()))
-//           setTimeout(()=> setAddToCartLoading(false), 500)
-//       } catch(err) {
-//           console.log(err)
-//       }
-//     }
-
-
-
-
-
-//     // console.log({
-//     //   productId: product._id,
-//     //   name: product.name,
-//     //   image: product.image[0],
-//     //   price: product.price,
-//     //   quantity: 1,
-//     // })
-//     // console.log(product)
-//     return (
-//         <div className="bg-white max-w-screen min-h-screen over-flow-x-hidden">
-
-//       </div>
-//     )
-// }
-
-
-// ProductPage.getInitialProps = wrapper.getInitialPageProps(
-//     ({ dispatch }) =>
-//       async ({ query }) => {
-//         await dispatch(getProduct({customPermalink: query.slug}))
-//       }
-//   )
-  

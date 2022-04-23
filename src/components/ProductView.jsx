@@ -1,5 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from 'next/image';
 
 // Import Swiper styles
 import "swiper/css";
@@ -28,7 +29,15 @@ const ProductView = ({images}) => {
       >
         {images.image.map((image, index) => (
           <SwiperSlide key={index}>
-            <img src={image} alt="Product Image" className='object-cover w-full h-full' />
+            <Image 
+              width={1920} 
+              height={2700} 
+              layout="responsive"
+              loading="lazy"
+              src={image} 
+              alt="Product Image" 
+              className='object-cover w-full h-full' 
+            />
           </SwiperSlide>
         ))}
 
