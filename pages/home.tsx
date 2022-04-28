@@ -22,10 +22,3 @@ const Home: NextPage = () => {
 
 export default Home
 
-Home.getInitialProps = wrapper.getInitialPageProps(
-  ({ dispatch }) =>
-  
-    async () => {      
-      await dispatch(getCart());
-    }
-)
