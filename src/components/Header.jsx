@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '@/src/store/hooks';
 import Link from 'next/link';
 import { setRequestMeta } from 'next/dist/server/request-meta';
 import Cart from './Cart';
-import HeaderMobile from './HeaderMobile';
+import HeaderMobile from '@/src/components/HeaderMobile';
 
 const Header = () => {
   const { cartData, cartPending, cartError } = useAppSelector((state) => state.cart);

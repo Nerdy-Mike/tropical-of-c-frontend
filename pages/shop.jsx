@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import Footer from '@/src/components/Footer'
 import Filter from '@/src/components/Filter'
@@ -71,9 +71,12 @@ export default function Shop() {
   // const [selectedColor, setSelectedColor] = useState(product.colors[0])
   // const [selectedSize, setSelectedSize] = useState(product.sizes[2])
   const { productData, productPending, productError } = useAppSelector((state) => state.products);
-  
+  const dispatch = useAppDispatch();
   const products = productData.data;
   const userId = Cookies.get('userId')
+  useEffect(() => {
+    dispatch(getCart({userId: userId})).then(res => console.log(res))
+}, [])
 
   return (
     <div className="bg-white max-w-screen min-h-screen over-flow-x-hidden px-4 sm:px-12 pt-28">
@@ -138,6 +141,5 @@ Shop.getInitialProps = wrapper.getInitialPageProps(
   
     async () => {      
       await dispatch(getProducts());
-      await dispatch(getCart());
     }
 )

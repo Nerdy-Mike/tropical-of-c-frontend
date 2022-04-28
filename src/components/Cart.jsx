@@ -3,8 +3,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { useAppDispatch, useAppSelector } from '@/src/store/hooks';
 import { removeFromCart, getCart, getCartFromResponse } from '@/src/store/actions/cartActions';
-import { get } from 'http';
-
+import { getCookie } from 'cookies-next';
 
 export default function Cart({open, setOpen}) {
 
@@ -12,9 +11,13 @@ export default function Cart({open, setOpen}) {
   const dispatch = useAppDispatch();
 
   const cart = cartData?.data?.items;
+
+  const userId = getCookie('userId');
   const handleRemoveFromCart = async (productId) => {
     try{
-        await dispatch(removeFromCart({productId})).then(res => dispatch(getCartFromResponse({data: res.payload})))
+        await dispatch(removeFromCart({productId: productId, userId: userId})).then(res => 
+          dispatch(getCartFromResponse({data: res.payload}
+        )));
     } catch(err) {
         console.log(err)
     }
@@ -54,10 +57,10 @@ export default function Cart({open, setOpen}) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="pointer-events-auto w-screen max-w-md">
+              <div className="pointer-events-auto w-screen max-w-md ">
                 <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
-                  <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
-                    <div className="flex items-start justify-between">
+                    {/* Title */}
+                    <div className="flex items-start justify-between py-6 px-6 ">
                       <Dialog.Title className="text-lg font-medium text-gray-900"> Shopping cart </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
                         <button
@@ -70,8 +73,9 @@ export default function Cart({open, setOpen}) {
                         </button>
                       </div>
                     </div>
-
-                    <div className="mt-8">
+                    {/* Cart */}
+                  <div className="flex-1 overflow-y-auto py-4 px-4 sm:px-6">
+                    <div className="">
                       <div className="flow-root">
                         <ul role="list" className="-my-6 divide-y divide-gray-200">
                           {cart?.map((product, index) => (
@@ -99,7 +103,10 @@ export default function Cart({open, setOpen}) {
 
                                   <div className="flex">
                                     <button type="button" className="font-medium text-gray-600 hover:text-gray-500"
-                                     onClick={(e) => {e.preventDefault(); handleRemoveFromCart(product.product.productId)}}>
+                                     onClick={(e) => {
+                                       e.preventDefault(); 
+                                       handleRemoveFromCart(product.product.productId
+                                      )}}>
                                       Remove
                                     </button>
                                   </div>

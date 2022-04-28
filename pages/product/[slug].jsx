@@ -36,25 +36,46 @@ export default function ProductPage() {
     const [selectedSize, setSelectedSize] = useState(productOptions.sizes[2])
 
     const [ addToCartLoading, setAddToCartLoading ] = useState(false)
+    // const handleAddToCart = async (e) => {
+    //     e.preventDefault()
+    //   try{
+    //       setAddToCartLoading(true)
+    //       await dispatch(addToCart({
+    //         productId: product._id,
+    //         name: product.name,
+    //         image: product.image[0],
+    //         price: product.price,
+    //         quantity: 1,
+    //       })).then(res => dispatch(getCartFromResponse({data: res.payload})))
+    //       setTimeout(()=> setAddToCartLoading(false), 500)
+    //   } catch(err) {
+    //       console.log(err)
+    //   }
+    // }
+    const userId = getCookie('userId')
     const handleAddToCart = async (e) => {
-        e.preventDefault()
-      try{
-          setAddToCartLoading(true)
-          await dispatch(addToCart({
-            productId: product._id,
-            name: product.name,
-            image: product.image[0],
-            price: product.price,
-            quantity: 1,
-          })).then(res => dispatch(getCartFromResponse({data: res.payload})))
-          setTimeout(()=> setAddToCartLoading(false), 500)
-      } catch(err) {
-          console.log(err)
-      }
+      e.preventDefault()
+    try{
+        setAddToCartLoading(true)
+        await dispatch(addToCart({
+          productId: product._id,
+          name: product.name,
+          image: product.image[0],
+          price: product.price,
+          quantity: 1,
+          userId: userId,
+        })).then(res => dispatch(getCartFromResponse({data: res.payload})))
+        setTimeout(()=> setAddToCartLoading(false), 500)
+    } catch(err) {
+        console.log(err)
     }
+  }
+    useEffect(() => {
+        dispatch(getCart({userId: userId})).then(res => console.log(res))
+    }, [])
     return (
         <div className="bg-white max-w-screen min-h-screen over-flow-x-hidden">
-        <div className="grid grid-cols-1 sm:grid-cols-3 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 relative">
           {/* Image gallery */}
           <div className="col-span-1 sm:col-span-2 grid sm:grid-cols-2 lg:gap-2">
             {product.image.map((image, index) => (
@@ -68,8 +89,8 @@ export default function ProductPage() {
                 
           </div>
           {/* Product info */}
-          <div className='col-span-1 block sm:min-h-screen relative'>
-            <div className="max-w-md mx-auto pt-10 pb-16 px-12 lg:pt-16 lg:pb-24 sticky top-12 hidden sm:block ">
+          <div className='col-span-1 block md:min-h-screen relative'>
+            <div className="max-w-md mx-auto pt-10 pb-16 px-12 lg:pt-16 lg:pb-24 sticky top-12 hidden md:block ">
               <div className="lg:col-span-2 lg:pr-8">
                 <h1 className="tracking-tight text-gray-700 text-2xl">{product.name}</h1>
               </div>
@@ -176,7 +197,7 @@ export default function ProductPage() {
         </div>
         
           {/* Mobile Responsive */}
-        <div className=" sm:hidden sticky bottom-0 bg-white">
+        <div className=" md:hidden sticky bottom-0 bg-white">
           <div className='text-center'>
             {product.name}
           </div> 
@@ -203,19 +224,20 @@ export default function ProductPage() {
 
 ProductPage.getInitialProps = wrapper.getInitialPageProps(
     ({ dispatch }) =>
+    
       async ({ query }) => {
-        await dispatch(getProduct({customPermalink: query.slug}))
-        await dispatch(getCart())
-
-        // let userId = getCookie('userId')
-        // if(userId == null){
-        //   await dispatch(getCart(userId))
-        // }else{
-        //   setCookies('userId', Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
-        //   let userId = getCookie('userId')
-        //   await dispatch(getCart({userId: userId}))
-        // }
-      }
+          let userId =  getCookie('userId')
+          await dispatch(getProduct({customPermalink: query.slug}))
+        // await dispatch(getCart())
+          // await dispatch(getCart({userId: userId}))
+        }
   )
   
-
+// export const getServerSideProps = wrapper.getServerSideProps(
+//     ({ dispatch }) => {
+//       async ({ query }) => {
+//         await dispatch(getProduct({customPermalink: query.slug}))
+//         await dispatch(getCart())
+//     }
+//   }
+// )

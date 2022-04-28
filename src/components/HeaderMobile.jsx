@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
 import {  Menu, Transition } from '@headlessui/react'
-import Cart from './Cart'
+import Cart from '@/src/components/Cart'
 
 const navigation = [
   { name: 'Shop', href: '/shop', current: true },
