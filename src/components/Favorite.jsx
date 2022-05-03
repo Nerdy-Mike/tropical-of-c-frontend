@@ -12,7 +12,7 @@ const Favorite = () => {
   return (
     <>
       <div className='px-10 md:pl-16 pb-4 py-2'>
-        <div className='text-3xl text-center'>
+        <div className='text-3xl text-center py-4'>
           Our favorite designs
         </div>
       </div>
@@ -49,7 +49,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://www.net-a-porter.com/variants/images/25185454455582128/in/w828_q60.jpg' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 1
                     </div>                    
@@ -64,7 +64,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://www.net-a-porter.com/variants/images/25185454455582070/in/w828_q60.jpg' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 2
                     </div>                    
@@ -79,7 +79,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://www.net-a-porter.com/variants/images/25185454455582264/in/w828_q60.jpg' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 3
                     </div>                    
@@ -94,7 +94,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://www.net-a-porter.com/variants/images/45666037504790899/in/w828_q60.jpg' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 4
                     </div>                    
@@ -109,7 +109,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://www.net-a-porter.com/variants/images/27086482324427306/in/w828_q60.jpg' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 1
                     </div>                    
@@ -124,7 +124,7 @@ const Favorite = () => {
             <div className='pl-16'>
               <a className='cursor-pointer'>
                 <figure>
-                <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/products/ETQ_Model_032Angel3_1200x.jpg?v=1644524046' width='360' />
+                <img loading='lazy' src='https://www.net-a-porter.com/variants/images/27086482324427285/in/w828_q60.jpg' width='360' />
                     <div className='text-lg font-bold text-gray-600'>
                         Angel 5
                     </div>                    

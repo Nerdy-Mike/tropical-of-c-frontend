@@ -72,12 +72,30 @@ export default function Shop() {
   // const [selectedSize, setSelectedSize] = useState(product.sizes[2])
   const { productData, productPending, productError } = useAppSelector((state) => state.products);
   const dispatch = useAppDispatch();
-  const products = productData.data;
+  let products = productData.data;
   const userId = Cookies.get('userId')
-  useEffect(() => {
-    dispatch(getCart({userId: userId})).then(res => console.log(res))
-}, [])
 
+  const [productFilter, setProductFilter] = useState({
+    color: '',
+    size: '',
+    style: '',
+  })
+
+  useEffect(() => {
+    dispatch(getCart({userId: userId}))
+  }, [])
+
+  // useEffect(() => {
+  //   const filteredProducts = products.filter(product => 
+  //      product.categories.includes(productFilter.style)
+  //   )
+  //   console.log(filteredProducts)
+  // }, [productFilter])
+
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'VND',
+  })
   return (
     <div className="bg-white max-w-screen min-h-screen over-flow-x-hidden px-4 sm:px-12 pt-28">
       <div className=" grid grid-cols-1 sm:grid-cols-3 relative space-x-4">
@@ -85,35 +103,38 @@ export default function Shop() {
         {/* Product list */}
         <div className="lg:grid lg:grid-cols-2 md:col-span-2">
             <div className='col-span-2 px-2 flex justify-between'>
-              <div> 12 results</div>
-              <div> Remove all filters</div>
+              <div> {products?.length} results</div>
+              <button onClick={() => setProductFilter({
+                  color: '',
+                  size: '',
+                  style: '',
+                })}> 
+                Remove all filters
+              </button>
             </div>
             {products?.map((data, index) => (
               <div className='px-2 py-4' key={index}>
                 <a className='cursor-pointer' href={`/product/${data.customPermalink}`}>
                   <figure >
                     <ProductView images={data}/>
-                    <div className='text-lg font-bold text-gray-600'>
-                        Angel 1
+                    <div className='text-lg font-bold text-gray-600 pt-2'>
+                        {data.name}
                     </div>
                     <div className=' text-gray-500'>
-                        450.000 VND
+                      {formatter.format(data.price)} 
                     </div>
                   </figure>
                 </a>
                 </div>
             ))}
-
-                      
-
         </div>
 
         {/* Filter */}
-        <Filter />
+        <Filter productFilter={productFilter} setProductFilter={setProductFilter}/>
       </div>
       
         {/* Mobile Responsive */}
-      <div className=" sm:hidden sticky bottom-0 bg-white">
+      <div className=" sm:hidden sticky bottom-0 bg-white z-10">
         <div className='text-center'>
           {products?.name}
         </div> 

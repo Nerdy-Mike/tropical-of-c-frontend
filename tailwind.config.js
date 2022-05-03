@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Helvetica', 'Arial', 'sans-serif'],
+      },
       gridTemplateRows: {
         '[auto,auto,1fr]': 'auto auto 1fr',
       },
@@ -17,6 +20,9 @@ module.exports = {
         '446': '446px',
         '490': '490px',
       },
+      grayscale: {
+        30: '30%',
+      }
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'),],

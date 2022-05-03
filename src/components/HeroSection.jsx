@@ -2,7 +2,7 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import Image from 'next/image'
-import HeroImage from '@/public/hero-image.webp'
+import HeroImage from '@/public/hero-image3.webp'
 
 export default function HeroSection() {
 
@@ -15,6 +15,7 @@ export default function HeroSection() {
       <div className="relative flex flex-col md:grid md:grid-cols-4 min-h-screen ">
         <div className=' md:col-span-3 min-h-screen w-full relative  '>
             <Image
+                className='' 
                 layout='fill'
                 objectFit='cover'
                 src={HeroImage}
@@ -37,7 +38,7 @@ export default function HeroSection() {
                   <path stokelinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
             </button>
-          </div>
+        </div>
       </div>
 
 

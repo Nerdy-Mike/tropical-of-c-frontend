@@ -18,14 +18,14 @@ const Feature = () => {
                 {/* Feature 1 */}
           <div className='grid grid-cols-2'>
             <div>
-              <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/articles/Doos-Web-thumbnail-22_9495fac5-50e7-41ae-bee4-e5924e1fba1d_400x.jpg?v=1649764712' />
+              <img className='max-h-72 grayscale-30' loading='lazy' src='https://images.unsplash.com/photo-1606937492590-2c6e942b1951?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1vZHVsYXIlMjBwYWNrYWdpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60' />
             </div>
             <div className='flex items-center pl-4'>
               <div>
                 <p className='font-bold text-gray-800'>Modular Packaging</p>
                 <p className='text-gray-600'>Unboxing like never before</p>
                 <Link href='/about/modular-packaging' >
-                  <div className='underline underline-offset-2 italic cursor-pointer'>See more</div>
+                  <div className='italic cursor-pointer'>Read more</div>
                 </Link>
               </div>
             </div>
@@ -33,15 +33,15 @@ const Feature = () => {
                   {/* Feature 2 */}
 
           <div className='grid grid-cols-2'>
-            <div>
-              <img loading='lazy'  src='https://cdn.shopify.com/s/files/1/0505/9044/9849/articles/Doos-Web-thumbnail-22_9495fac5-50e7-41ae-bee4-e5924e1fba1d_400x.jpg?v=1649764712'  />
+            <div >
+              <img className='max-h-72 grayscale-30' loading='lazy'  src='https://images.unsplash.com/photo-1532347922424-c652d9b7208e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dHJvcGljYWwlMjBiaWtpbml8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'  />
             </div>
             <div className='flex items-center pl-4'>
               <div>
                 <p className='font-bold text-gray-800'>Who we are</p>
                 <p className='text-gray-600'>Our journey</p>
                 <Link href='/about' >
-                  <div className='underline underline-offset-2  italic cursor-pointer'>See more</div>
+                  <div className='italic cursor-pointer'>Read more</div>
                 </Link>
               </div>
             </div>
@@ -50,14 +50,14 @@ const Feature = () => {
 
           <div className='grid grid-cols-2'>
             <div>
-              <img loading='lazy' src='https://cdn.shopify.com/s/files/1/0505/9044/9849/articles/Journal_HowIt_sMade_Small2_400x.jpg?v=1621353623' width="190" />
+              <img className='max-h-72 grayscale-30' loading='lazy' src='https://images.unsplash.com/photo-1622146322108-ffef66c1e7a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3dpbXdlYXJ8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60' width="190" />
             </div>
             <div className='flex items-center pl-4'>
               <div>
                 <p className='font-bold text-gray-800'>How it's made</p>
                 <p className='text-gray-600'> Quality bring comfort</p>
                 <Link href='/about/how-its-made' >
-                  <div className='underline underline-offset-2 italic cursor-pointer'>See more</div>
+                  <div className='italic cursor-pointer'>Read more</div>
                 </Link>
               </div>
             </div>

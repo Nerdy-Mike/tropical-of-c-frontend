@@ -1,7 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import type { NextPage } from 'next'
+import { useAppDispatch, useAppSelector } from '@/src/store/hooks';
+import Cookies from 'js-cookie';
+import { getCart, addToCart } from '@/src/store/actions/cartActions';
 
 const Help: NextPage = () => {
+
+  const dispatch = useAppDispatch();
+  const userId = Cookies.get('userId')
+
+  useEffect(() => {
+    dispatch(getCart({userId: userId || ''}))
+  }, [])
+
   return (
     <div>
       <div className=" bg-white overflow-hidden -z-10">
@@ -43,7 +54,7 @@ const Help: NextPage = () => {
               </div>
 
               {/* Shipping Information & Exchanges*/}
-              <div className="col-span-2 flex flex-col space-y-10 ">
+              <div className="col-span-2 flex flex-col space-y-10 pt-10 md:pt-0">
                 <div className=" space-y-4">
                   <h1 className="text-xl  text-gray-800">
                     Shipping information
@@ -64,7 +75,7 @@ const Help: NextPage = () => {
                 </div>
               </div>
               {/* Payment & Questions */}
-              <div className="col-span-2 flex flex-col space-y-10 ">
+              <div className="col-span-2 flex flex-col space-y-10 pt-10 md:pt-0">
                 <div className=" space-y-4">
                   <h1 className="text-xl  text-gray-800">
                     Payment

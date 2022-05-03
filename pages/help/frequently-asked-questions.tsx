@@ -1,7 +1,7 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import { Disclosure } from '@headlessui/react'
-import { ChevronUpIcon } from '@heroicons/react/solid'
+import { ChevronUpIcon, ChevronLeftIcon } from '@heroicons/react/solid'
 import { useRouter } from 'next/router'
 
 const FrequentlyAsked: NextPage = () => {
@@ -28,8 +28,8 @@ const FrequentlyAsked: NextPage = () => {
               {/* Frequently Asked Questions */}
               
               <div className="col-span-4 flex flex-col space-y-6 px-8 sm:px-16">
-                <button className='text-left' onClick={() => router.back()}>
-                    Return
+                <button className='-ml-7 text-left flex underline underline-offset-1' onClick={() => router.back()}>
+                    <ChevronLeftIcon className='w-7 h-6 text-gray-500' /> Return
                 </button>
                 <p className='font-bold'>
                 Frequently Asked Questions

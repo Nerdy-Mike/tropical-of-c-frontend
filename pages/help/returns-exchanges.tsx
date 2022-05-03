@@ -1,6 +1,7 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
+import { ChevronLeftIcon } from '@heroicons/react/solid'
 
 const SizeGuide: NextPage = () => {
 
@@ -21,8 +22,8 @@ const SizeGuide: NextPage = () => {
             </div>
 
             <div className='flex flex-col py-10 px-32'>
-                <button className='text-left' onClick={() => router.back()}>
-                    Return
+                <button className='-ml-7 text-left flex underline underline-offset-1' onClick={() => router.back()}>
+                    <ChevronLeftIcon className='w-7 h-6 text-gray-500' /> Return
                 </button>
                 <p className='text-lg font-bold py-6'>Returns & Exchanges</p>
                 <div className='text-gray-700'>

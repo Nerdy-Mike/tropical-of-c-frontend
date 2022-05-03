@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   return (
       <>
         <Head>
-          <title>Nerdy Mike</title>
+          <title>Tropical C</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
 

@@ -106,7 +106,7 @@ export default function ProductPage() {
                   <div className="">
                     <div className="flex items-center justify-between">
                       <h3 className="text-sm text-gray-900 font-medium">Size</h3>
-                      <a href="#" className="text-sm font-medium ">
+                      <a href="/help/size-guide" className="text-sm font-medium ">
                         Size guide
                       </a>
                     </div>

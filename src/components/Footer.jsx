@@ -13,24 +13,24 @@ const Footer = () => {
                                 
                                 className="inline-block max-w-[160px] mb-6"
                                 >
-                                    <p className="font-bold">TROPICAL OF C</p>
+                                    <p className="font-bold text-lg">TROPICAL OF C</p>
                             </a>
-                            <p className="text-base text-body-color mb-7">
+                            <p className="text-base text-body-color mb-7 pr-4">
                                 Founded in 2010 in Amsterdam, ETQ derived under the mindset of eliminating over-accessorized branding and focusing primarily on letting the quality of the product speak for itself. <a className="underline">Read more</a>
                             </p>
                             </div>
                         </div>
                         <div className="w-full sm:w-1/2 lg:w-2/12 md:px-4">
                             <div className="w-full mb-10">
-                            <h4 className="text-dark text-lg font-semibold mb-9">Address</h4>
-                                    <p className="text-base text-body-color mb-7">
+                            <h4 className="text-dark text-md font-semibold mb-9">Address</h4>
+                                    <p className="text-base text-body-color mb-7 pt-1">
                                     Ho Chi Minh City, Vietnam
                                     </p>
                             </div>
                         </div>
                         <div className="w-full sm:w-1/2 lg:w-2/12 md:px-4">
                             <div className="w-full mb-10">
-                            <h4 className="text-dark text-lg font-semibold mb-9">Contact</h4>
+                            <h4 className="text-dark text-md font-semibold mb-9">Contact</h4>
                             <ul>
                                 <li>
                                     <a
@@ -65,7 +65,7 @@ const Footer = () => {
                         </div>
                         <div className="w-full sm:w-1/2 lg:w-2/12 md:px-4">
                             <div className="w-full mb-10">
-                            <h4 className="text-dark text-lg font-semibold mb-9">Info</h4>
+                            <h4 className="text-dark text-md font-semibold mb-9">Info</h4>
                             <ul>
                                 <li>
                                     <a
@@ -115,7 +115,7 @@ const Footer = () => {
                         </div>
                         <div className="w-full sm:w-1/2 lg:w-3/12 md:px-4">
                             <div className="w-full mb-10">
-                            <h4 className="text-dark text-lg font-semibold mb-9">Follow Us On</h4>
+                            <h4 className="text-dark text-md font-semibold mb-9">Follow Us On</h4>
                             <div className="flex items-center mb-6">
                                 <a
                                     
@@ -128,7 +128,7 @@ const Footer = () => {
                                     rounded-full
                                     border border-[#E5E5E5]
                                     text-dark
-                                    hover:text-white hover:bg-primary hover:border-primary
+                                    cursor-pointer
                                     mr-3
                                     sm:mr-4
                                     lg:mr-3
@@ -157,7 +157,7 @@ const Footer = () => {
                                     rounded-full
                                     border border-[#E5E5E5]
                                     text-dark
-                                    hover:text-white hover:bg-primary hover:border-primary
+                                    cursor-pointer
                                     mr-3
                                     sm:mr-4
                                     lg:mr-3
@@ -186,7 +186,7 @@ const Footer = () => {
                                     rounded-full
                                     border border-[#E5E5E5]
                                     text-dark
-                                    hover:text-white hover:bg-primary hover:border-primary
+                                    cursor-pointer
                                     mr-3
                                     sm:mr-4
                                     lg:mr-3
@@ -215,7 +215,7 @@ const Footer = () => {
                                     rounded-full
                                     border border-[#E5E5E5]
                                     text-dark
-                                    hover:text-white hover:bg-primary hover:border-primary
+                                    cursor-pointer
                                     mr-3
                                     sm:mr-4
                                     lg:mr-3

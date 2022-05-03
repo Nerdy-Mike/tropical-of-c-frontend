@@ -31,7 +31,7 @@ const ProductView = ({images}) => {
           <SwiperSlide key={index}>
             <Image 
               width={1920} 
-              height={2700} 
+              height={2300} 
               layout="responsive"
               loading="lazy"
               src={image} 

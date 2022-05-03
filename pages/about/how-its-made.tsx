@@ -37,6 +37,8 @@ const HowItsMade: NextPage = () => {
                     Back in 2010, while working at a local Amsterdam retailer, we saw an opening for a different approach to footwear. One that breathes luxury and design, but one that is also modest, minimalistic and affordable. It turned out to be a promising idea. 
                     
                     <br/>
+                    <br/>
+
                     Now, 10 years later, the cliche might be to express how fast the time has passed. But the truth is that is has been a long and intense road. What started as a small project with friends, emerged out of passion and curiosity, turned out to be the brand that is now represented at premium retailers in Europe’s main capitals.
                 </p>
              </div>

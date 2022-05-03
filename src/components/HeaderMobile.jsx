@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 import Link from 'next/link'
-import {  Menu, Transition } from '@headlessui/react'
 import Cart from '@/src/components/Cart'
 
 const navigation = [
@@ -36,45 +36,60 @@ export default function HeaderMobile() {
       }
     
     return (
-        <div className={`sm:hidden fixed top-0 left-0 z-10 p-6 px-2 w-[calc(100vw-32px)] m-2 border transition-all duration-300 ${colorChange||openMenu ? 'bg-opacity-95 bg-white ' : ' border-transparent '}`}>
+        <div className={`sm:hidden fixed top-0 left-0 z-10 p-6 px-4 w-[calc(100vw-32px)] m-2 border transition-all duration-300 ${colorChange||openMenu ? 'bg-opacity-95 bg-white ' : ' border-transparent '}`}>
             <div className='flex flex-row justify-between sm:hidden w-full'>
                 <Link href="/home" >
                     <div className={`mr-3 cursor-pointer ${isHome&&!colorChange ? 'text-white' : 'text-black'}`}>
                     TROPICAL of C
                     </div>
                 </Link>
-                <button onClick={() => {setOpenMenu(!openMenu)}} className={`${!isHome&&openMenu||colorChange ? 'text-black' : 'text-white'}`}>
-                    X
+                <button onClick={() => {setOpenMenu(!openMenu)}} className={`${!isHome&&openMenu||colorChange ? 'text-black' : 'text-black'}`}>
+                  {/* Menu Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
+                  </svg>
                 </button>
             </div>
-            <div className={`w-full px-4 flex flex-col relative pt-6 ${openMenu ? 'h-screen -mb-24' : 'hidden'}`}>
-                {
-                    navigation.map((item, index) => {
-                        return (
-                            <button onClick={() => setOpenMenu(false)} key={index} className=' flex border-b justify-center sm:hidden w-full my-4 py-4 hover:bg-gray-100'>
-                                <Link href={item.href}>
-                                        <div>
-                                            <div className={`px-2 cursor-pointer  ${'text-black'}`}>{item.name}</div>
-                                        </div>
-                                </Link>
+            <Transition
+              show={openMenu}
+              as={Fragment}
+              enter="transition ease-out duration-300"
+              enterFrom="opacity-0 -translate-y-2"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 -translate-y-2"
+            >
+                <div className={`w-full px-4 flex flex-col relative pt-6 ${openMenu ? 'h-screen -mb-24' : 'hidden'}`}>
+                    {
+                        navigation.map((item, index) => {
+                            return (
+                                <button onClick={() => setOpenMenu(false)} key={index} className=' flex border-b justify-center sm:hidden w-full my-4 py-4 hover:bg-gray-100'>
+                                    <Link href={item.href}>
+                                            <div>
+                                                <div className={`px-2 cursor-pointer  ${'text-black'}`}>{item.name}</div>
+                                            </div>
+                                    </Link>
 
-                            </button>
+                                </button>
 
-                        )
-                    })
-                }
-                 <div>
-                    <button className='flex border-b justify-center sm:hidden w-full my-4 py-4 hover:bg-gray-100' onClick={() => setOpenCart(true)}>Cart</button>
-                    <Cart open={openCart} setOpen={setOpenCart}/>
+                            )
+                        })
+                    }
+                    <div>
+                        <button className='flex border-b justify-center sm:hidden w-full my-4 py-4 hover:bg-gray-100' onClick={() => setOpenCart(true)}>Cart</button>
+                        <Cart open={openCart} setOpen={setOpenCart}/>
+                    </div>
+                    <div className='absolute inset-x-0 bottom-24 text-center '>
+                        <button onClick={() => setOpenMenu(false)}>
+                            <Link href='/about'>
+                                About Us
+                            </Link>
+                        </button>
+                    </div>
                 </div>
-                <div className='absolute inset-x-0 bottom-24 text-center '>
-                    <button onClick={() => setOpenMenu(false)}>
-                        <Link href='/about'>
-                            About
-                        </Link>
-                    </button>
-                </div>
-            </div>
+
+            </Transition>
         </div>
 
     )
