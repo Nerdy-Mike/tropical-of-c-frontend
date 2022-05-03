@@ -39,7 +39,7 @@ const Header = () => {
       <header >
         <div className={`fixed top-0 left-0 z-10 p-6 pb-4 px-10 w-[calc(100vw-32px)] m-2 sm:border ${colorChange ? 'bg-opacity-95 sm:bg-white ' : ' border-transparent '}`}>
           <div className="sm:flex sm:flex-row justify-between hidden ">
-            <Link href="/home" >
+            <Link href="/" >
                 <div className={`mr-3 cursor-pointer ${isHome&&!colorChange ? 'text-white' : 'text-black'}`}>
                   <Image src={Logo} width={300} height={25} fill='white' stoke='white'/>
                 </div>

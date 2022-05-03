@@ -38,7 +38,7 @@ export default function HeaderMobile() {
     return (
         <div className={`sm:hidden fixed top-0 left-0 z-10 p-6 px-4 w-[calc(100vw-32px)] m-2 border transition-all duration-300 ${colorChange||openMenu ? 'bg-opacity-95 bg-white ' : ' border-transparent '}`}>
             <div className='flex flex-row justify-between sm:hidden w-full'>
-                <Link href="/home" >
+                <Link href="/" >
                     <div className={`mr-3 cursor-pointer ${isHome&&!colorChange ? 'text-white' : 'text-black'}`}>
                     TROPICAL of C
                     </div>

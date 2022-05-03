@@ -85,12 +85,10 @@ export default function Shop() {
     dispatch(getCart({userId: userId}))
   }, [])
 
-  // useEffect(() => {
-  //   const filteredProducts = products.filter(product => 
-  //      product.categories.includes(productFilter.style)
-  //   )
-  //   console.log(filteredProducts)
-  // }, [productFilter])
+  useEffect(() => {
+    // console.log(products?.filter((el) => el.categories.includes(productFilter.style)))
+    products = productFilter.style !== '' ? products?.filter((el) => el.categories.includes(productFilter.style)) : products
+  }, [productFilter])
 
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -102,7 +100,7 @@ export default function Shop() {
 
         {/* Product list */}
         <div className="lg:grid lg:grid-cols-2 md:col-span-2">
-            <div className='col-span-2 px-2 flex justify-between'>
+            <div className='col-span-2 px-2 flex justify-between h-10'>
               <div> {products?.length} results</div>
               <button onClick={() => setProductFilter({
                   color: '',
@@ -112,21 +110,26 @@ export default function Shop() {
                 Remove all filters
               </button>
             </div>
-            {products?.map((data, index) => (
-              <div className='px-2 py-4' key={index}>
-                <a className='cursor-pointer' href={`/product/${data.customPermalink}`}>
-                  <figure >
-                    <ProductView images={data}/>
-                    <div className='text-lg font-bold text-gray-600 pt-2'>
-                        {data.name}
-                    </div>
-                    <div className=' text-gray-500'>
-                      {formatter.format(data.price)} 
-                    </div>
-                  </figure>
-                </a>
-                </div>
-            ))}
+            <>
+            {
+              products?.filter((el) => productFilter.style === '' ? el : el.categories.includes(productFilter.style)).map((data, index) => (
+                <div className='px-2 py-4' key={index}>
+                  <a className='cursor-pointer' href={`/product/${data.customPermalink}`}>
+                    <figure >
+                      <ProductView images={data}/>
+                      <div className='text-lg font-bold text-gray-600 pt-2'>
+                          {data.name}
+                      </div>
+                      <div className=' text-gray-500'>
+                        {formatter.format(data.price)} 
+                      </div>
+                    </figure>
+                  </a>
+                  </div>
+              ))
+            }
+            </>
+
         </div>
 
         {/* Filter */}
