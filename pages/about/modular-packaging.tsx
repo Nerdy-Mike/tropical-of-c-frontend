@@ -8,17 +8,18 @@ const ModularPackaging: NextPage = () => {
     <div>
       <Header />
       <div className="relative bg-white overflow-hidden  -z-10">
-      <div className=" mx-auto">
-        <div className=''>
-            <img
-                className="h-screen w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                width={1920}
-                height={1080}
-                src="https://cdn.shopify.com/s/files/1/0505/9044/9849/files/ETQ_D1_V2_041_1_3840x.png?v=1623681561"
-                alt=""
-            />
+        <div className=" mx-auto">
+          <div className=''>
+              <img
+                  className="h-screen w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-screen"
+                  width={1920}
+                  height={1080}
+                  // src="https://cdn.shopify.com/s/files/1/0505/9044/9849/files/ETQ_D1_V2_041_1_3840x.png?v=1623681561"
+                  src="https://images.unsplash.com/photo-1611646569793-de6dbad0d74e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+                  alt=""
+              />
+          </div>
         </div>
-      </div>
       </div>
 
       <section className="bg-white py-8">

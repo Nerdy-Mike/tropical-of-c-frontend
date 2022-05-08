@@ -3,7 +3,7 @@ import FooterMobile from "./FooterMobile";
 
 const Footer = () => {
     return (
-        <footer className="bg-white pt-10 mt-20 mx-12 pb-2 relative border-t border-gray-300 max-w-screen">
+        <footer className=" bg-white pt-10 mt-20 mx-12 pb-2 relative border-t border-gray-300 max-w-screen">
             <div className="max-w-screen flex justify-center ">
                 <div className="container">
                     <div className="flex flex-wrap -mx-4">
@@ -13,7 +13,7 @@ const Footer = () => {
                                 
                                 className="inline-block max-w-[160px] mb-6"
                                 >
-                                    <p className="font-bold text-lg">TROPICAL OF C</p>
+                                    <p className="font-bold text-lg">TROPICAL C</p>
                             </a>
                             <p className="text-base text-body-color mb-7 pr-4">
                                 Founded in 2010 in Amsterdam, ETQ derived under the mindset of eliminating over-accessorized branding and focusing primarily on letting the quality of the product speak for itself. <a className="underline">Read more</a>
@@ -311,7 +311,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="flex justify-center pt-10">
-                <p className="text-base text-body-color">&copy; {new Date().getFullYear()} Tropical of C - All right reserved</p>
+                <p className="text-base text-body-color">&copy; {new Date().getFullYear()} Tropical C - All right reserved</p>
             </div>
             
             {/* <FooterMobile /> */}

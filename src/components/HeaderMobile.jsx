@@ -2,6 +2,8 @@ import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import Cart from '@/src/components/Cart'
+import Logo from '@/public/data/logo.svg'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Shop', href: '/shop', current: true },
@@ -39,9 +41,9 @@ export default function HeaderMobile() {
         <div className={`sm:hidden fixed top-0 left-0 z-10 p-6 px-4 w-[calc(100vw-32px)] m-2 border transition-all duration-300 ${colorChange||openMenu ? 'bg-opacity-95 bg-white ' : ' border-transparent '}`}>
             <div className='flex flex-row justify-between sm:hidden w-full'>
                 <Link href="/" >
-                    <div className={`mr-3 cursor-pointer ${isHome&&!colorChange ? 'text-white' : 'text-black'}`}>
-                    TROPICAL of C
-                    </div>
+                  <div className={` cursor-pointer ${isHome&&!colorChange ? 'text-white' : 'text-black'}`}>
+                    <Image src={Logo} width={300} height={25} fill='white' stoke='white'/>
+                  </div>
                 </Link>
                 <button onClick={() => {setOpenMenu(!openMenu)}} className={`${!isHome&&openMenu||colorChange ? 'text-black' : 'text-black'}`}>
                   {/* Menu Icon */}

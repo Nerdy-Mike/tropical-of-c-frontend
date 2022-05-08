@@ -17,10 +17,10 @@ const About: NextPage = () => {
       <div className=" bg-white overflow-hidden -z-10" >
       <div className=" mx-auto" >
             <img loading='lazy'  
-                className="h-screen w-full object-cover "
+                className="h-screen w-full object-cover"
                 width={1920}
                 height={1080}
-                src="https://cdn.shopify.com/s/files/1/0505/9044/9849/files/ETQ_D1_V2_041_1_3840x.png?v=1623681561"
+                src="https://images.unsplash.com/photo-1524253734009-380c403e2d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2264&q=80"
                 alt=""
             />
             <div className="absolute inset-x-56 sm:inset-x-1/2 bottom-6 md:bottom-0 pb-2 ">
@@ -60,23 +60,13 @@ const About: NextPage = () => {
 
             <div className="flex flex-wrap flex-col-reverse sm:flex-row items-center">
                 <div className="w-full sm:w-1/2 p-6 mt-6">
-                    <img loading='lazy'  src='https://cdn.shopify.com/s/files/1/0505/9044/9849/files/Essence_Explore_Header_Variant-One_Product_IMG-1_1200x.png?v=1620315643' alt="" className="w-full"/>
+                    <img loading='lazy'  src='https://images.unsplash.com/photo-1637526997367-d44a21b2c3c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80' alt="" className="w-full"/>
                     </div>
                     <div className="w-full sm:w-1/2 p-6 mt-6">
-                    <img loading='lazy'  src='https://cdn.shopify.com/s/files/1/0505/9044/9849/files/LT01-white-04-e1559815697270_1200x.jpg?v=1616764650' alt="" className="w-full"/>
+                    <img loading='lazy'  src='https://i.etsystatic.com/16349186/r/il/dbabc0/3018028283/il_794xN.3018028283_8eva.jpg' alt="" className="w-full"/>
                     </div>
                 </div>
-            
-                    <div className="flex flex-wrap flex-col-reverse sm:flex-row items-center">
-                    <div className="w-full sm:w-1/2 p-6 mt-6">
-                    <img loading='lazy'  src='https://cdn.shopify.com/s/files/1/0505/9044/9849/files/Rectangle_15769823_828x.png?v=1621351058' alt="" className="w-full"/>
-                    </div>
-                    <div className="w-full sm:w-1/2 p-6 mt-6">
-                    <img loading='lazy'  src='https://cdn.shopify.com/s/files/1/0505/9044/9849/files/image_37_1_1200x.png?v=1621351058' alt="" className="w-full"/>
-                </div>
-            </div>
-
-            <div className="flex flex-wrap">
+                <div className="flex flex-wrap">
                 <div className="w-full sm:w-1/2 p-6">
                 </div>
                 <div className="w-5/6 sm:w-1/2 p-6">
@@ -87,17 +77,27 @@ const About: NextPage = () => {
                 </div>
   
             </div>
+                    <div className="flex flex-wrap flex-col-reverse sm:flex-row items-center">
+                    <div className="w-full sm:w-1/2 p-6 mt-6">
+                    <img loading='lazy'  src='https://i.etsystatic.com/18524026/r/il/072528/3102754007/il_1588xN.3102754007_634g.jpg' alt="" className="w-full"/>
+                    </div>
+                    <div className="w-full sm:w-1/2 p-6 mt-6">
+                    <img loading='lazy'  src='https://images.unsplash.com/photo-1642472147189-df7cade9b412?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1888&q=80' alt="" className="w-full"/>
+                </div>
+            </div>
+
+
           
 
 
-          <div className="flex flex-wrap flex-col-reverse sm:flex-row items-center">
+          {/* <div className="flex flex-wrap flex-col-reverse sm:flex-row items-center">
             <div className="w-full sm:w-1/2 p-6 ">
               <img loading='lazy'  src='https://cdn.shopify.com/s/files/1/0505/9044/9849/files/ETQ-Packaging-box-2_828x.gif?v=1623681561' alt="" className="w-1/2"/>
             </div>
             <div className="w-full h-full sm:w-1/2 p-6 mt-6">
               <img loading='lazy'  src='https://cdn.shopify.com/s/files/1/0505/9044/9849/files/Doos-PDP-open_1200x.jpg?v=1623681561' alt="" className="w-5/6"/>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-wrap">
             <div className="w-5/6 sm:w-1/2 p-6">

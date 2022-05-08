@@ -17,16 +17,16 @@ const Help: NextPage = () => {
     <div>
       <div className=" bg-white overflow-hidden -z-10">
         <div className=" mx-auto">
-          <div className='min-h-screen '>
+          <div className=''>
             {/* Banner */}
             <div className='relative'>
               <img
-                  className="w-full object-cover h-50 "
-                  src="https://cdn.shopify.com/s/files/1/0505/9044/9849/files/low-1-side-detail-e1559738258985-2000x0-c-default_2048x.jpg?v=1619170804"
+                  className="w-full object-cover pb-30 h-50 "
+                  src="https://www.createcultivate.com/wp-content/uploads/2021/07/stil-243541-unsplash.jpg"
                   alt=""
               />
-              <div className='absolute top-1/2 right-1/2 font-bold -mr-16'>
-                  Ask us anything
+              <div className='absolute top-1/2 right-1/2 font-bold -mr-32 text-3xl '>
+                  Ask us any<>thing</>
               </div>
             </div>
             {/* End Banner */}
@@ -99,7 +99,7 @@ const Help: NextPage = () => {
             </div>
           </div>
             {/* Ask more */}
-          <div className='py-16 px-6 flex items-center justify-center  text-center'>
+          <div className='py-20 px-6 flex items-center justify-center  text-center'>
             <div className='text-lg'>
             Can't find the answer you are looking for? You can send an e-mail to: 
             <a href="mailto:xyz@abc.com" className='px-2 underline underline-offset-1'>youremail@gmail.com</a>

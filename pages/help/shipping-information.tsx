@@ -14,7 +14,7 @@ const ShippingInformation: NextPage = () => {
             <div className='relative'>
                 <img
                     className="w-full object-cover h-72 "
-                    src="https://cdn.shopify.com/s/files/1/0505/9044/9849/files/low-1-side-detail-e1559738258985-2000x0-c-default_2048x.jpg?v=1619170804"
+                    src="https://ae01.alicdn.com/kf/Hce56c82d5eb549d88c4f52d073597ab1v/2021-Sexy-N-Push-Up-Bikini-B-B-i-o-B-i-B-G-i.jpg_Q90.jpg_.webp"
                     alt=""
                 />
 

@@ -105,7 +105,7 @@ export default function Checkout() {
     }
 
     return (
-        <div className='max-h-screen grid grid-cols-5 pt-24 px-24 mt-8'>
+        <div className='max-h-screen grid grid-cols-5 pt-40 px-24 pb-80 '>
             <div className='col-span-3   '>
                 <PurchaseForm customerInfo={customerInfo} setCustomerInfo={setCustomerInfo} hanldeCheckout={hanldeCheckout} />
             </div>
@@ -113,7 +113,7 @@ export default function Checkout() {
                 <div className='text-xl'>
                     Your Cart
                 </div>
-                <div className='py-4 my-4 h-96 overflow-auto px-2 border'>
+                <div className='py-4 my-4 h-96 overflow-auto px-2 border '>
                     <ul role="list" className="-my-6 divide-y divide-gray-200 m-2">
                         {cart?.map((product, index) => (
                             <li key={index} className="flex py-6 ">
